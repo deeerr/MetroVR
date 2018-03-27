@@ -30,13 +30,15 @@ public class DoorController : MonoBehaviour
             Transform child = transform.GetChild(i);
             if (child.name.Equals("LeftDoor"))
             {
-                leftAnim = child.DOLocalMoveZ(-0.8f, 3).SetEase(Ease.InQuad);
+               
+                leftAnim = child.DOLocalMoveZ(0.8f, 3).SetEase(Ease.InQuad);
                 leftAnim.SetAutoKill(false);
                 leftAnim.Pause();
             }
             else if (child.name.Equals("RightDoor"))
             {
-                rightAnim = child.DOLocalMoveZ(0.8f, 3).SetEase(Ease.InQuad);
+              
+                rightAnim = child.DOLocalMoveZ(-0.8f, 3).SetEase(Ease.InQuad);
                 rightAnim.SetAutoKill(false);
                 rightAnim.Pause();
             }
@@ -47,6 +49,7 @@ public class DoorController : MonoBehaviour
     {
         if (!isOpen)
         {
+            
             leftAnim.PlayForward();
             rightAnim.PlayForward();
             isOpen = true;
